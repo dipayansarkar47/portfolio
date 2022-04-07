@@ -239,10 +239,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         Container(
                           height: MediaQuery.of(context).size.height * 0.08,
-                          width: MediaQuery.of(context).size.width * 0.7,
+                          width: MediaQuery.of(context).size.width * 0.5,
                           child: Row(children: [
                             Padding(
-                              padding: const EdgeInsets.only(left: 48.0),
+                              padding: const EdgeInsets.only(left: 24),
                               child: Icon(
                                 Icons.download,
                                 size: 30,

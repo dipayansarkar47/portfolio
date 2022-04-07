@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:codewithbiki/Download_Resume.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -237,31 +238,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         SizedBox(
                           height: 20,
                         ),
-                        Container(
-                          height: MediaQuery.of(context).size.height * 0.08,
-                          width: MediaQuery.of(context).size.width * 0.5,
-                          child: Row(children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 24),
-                              child: Icon(
-                                Icons.download,
-                                size: 30,
-                                color: Colors.white,
-                              ),
-                            ),
-                            Text(
-                              "  Download Resume",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ]),
-                          decoration: BoxDecoration(
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
+                        GradientButtonFb1(
+                            text: 'Download Resume',
+                            onPressed: () {
+                              print('Download Resume');
+                            }),
                       ],
                     ),
                   ),

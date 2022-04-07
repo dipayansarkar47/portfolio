@@ -116,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.6,
+                height: MediaQuery.of(context).size.height * 0.9,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                   boxShadow: [
@@ -239,7 +239,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         Container(
                           height: MediaQuery.of(context).size.height * 0.08,
-                          width: MediaQuery.of(context).size.width * 0.5,
+                          width: MediaQuery.of(context).size.width * 0.7,
                           child: Center(
                             child: Row(children: [
                               Padding(

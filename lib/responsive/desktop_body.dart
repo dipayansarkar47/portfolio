@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:codewithbiki/Download_Resume.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyDesktopBody extends StatelessWidget {
   const MyDesktopBody({Key? key}) : super(key: key);
@@ -49,53 +50,22 @@ class MyDesktopBody extends StatelessWidget {
               centerTitle: true,
               backgroundColor: Colors.black,
               actions: [
-                MouseRegion(
-                  onHover: (event) {
-                    showDialog(
-                        context: context,
-                        builder: (context) => AlertDialog(
-                              title: Text(
-                                'Contact Me',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              ),
-                              content: SelectableText(
-                                'dipayansarkar265482@gmail.com',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              elevation: 24,
-                              backgroundColor: Colors.redAccent,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20)),
-                              // actions: [
-                              //   FlatButton(
-                              //     child: Text('Download'),
-                              //     onPressed: () {
-                              //       Navigator.push(
-                              //         context,
-                              //         MaterialPageRoute(
-                              //           builder: (context) => DownloadResume(),
-                              //         ),
-                              //       );
-                              //     },
-                              //   ),
-                              //   FlatButton(
-                              //     child: Text('Cancel'),
-                              //     onPressed: () {
-                              //       Navigator.pop(context);
-                              //     },
-                              //   ),
-                              // ],
-                            ));
+                IconButton(
+                  color: Colors.red,
+                  hoverColor: Colors.white,
+                  splashColor: Colors.blue,
+                  icon: Icon(Icons.mail),
+                  onPressed: () async {
+                    final toEmail = 'dipayansarkar265482@gmail.com';
+                    final subject = 'Hey! I am interested in your resume';
+                    final body = 'Hi, Can we connect on your email?';
+                    final url = 'mailto:$toEmail?subject=$subject&body=$body';
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
                   },
-                  child: IconButton(
-                    color: Colors.red,
-                    hoverColor: Colors.white,
-                    splashColor: Colors.blue,
-                    icon: Icon(Icons.mail),
-                    onPressed: () {},
-                  ),
                 ),
               ],
             ),

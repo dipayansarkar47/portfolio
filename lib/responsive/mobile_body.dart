@@ -6,7 +6,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-final Uri _url = Uri.parse('https://drive.google.com/file/d/1GpsTyHVzt2RaBLYGffj5bk77aHrYRZ9P/view?usp=sharing');
+final Uri _url = Uri.parse(
+    'https://drive.google.com/file/d/1GpsTyHVzt2RaBLYGffj5bk77aHrYRZ9P/view?usp=sharing');
 
 class MyMobileBody extends StatelessWidget {
   const MyMobileBody({Key? key}) : super(key: key);
@@ -256,8 +257,7 @@ class MyMobileBody extends StatelessWidget {
                           height: 10,
                         ),
                         GradientButtonFb1(
-                            text: 'Download Resume',
-                            onPressed: _launchUrl),
+                            text: 'Download Resume', onPressed: _launchUrl),
                       ],
                     ),
                   ),

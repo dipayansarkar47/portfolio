@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class GradientButtonFb1 extends StatelessWidget {
   final String text;
   final Function() onPressed;
